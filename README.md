@@ -40,6 +40,14 @@ from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer()
 x_train = cv.fit_transform(x_train)
 x_test = cv.transform(x_test)
+from sklearn.svm import SVC
+svc = SVC()
+svc.fit(x_train,y_train)
+y_pred = svc.predict(x_test)
+y_pred
+from sklearn inport metrics
+accuracy = metrics.accuracy_score(y_test,y_pred)
+accuracy
 ```
 
 ## Output:
