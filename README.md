@@ -24,19 +24,18 @@ RegisterNumber:  212223040002
 
 ```
 ```
-
 import pandas as pd
-data = pd.read_csv("C:/Users/marco/OneDrive/Desktop/study materials/spam.csv",encoding = 'Windows-1252')
-data
-
-data.head()
-data.tail()
-data.isnull().sum()
-
-x = data['v1'].values
-y = data['v2'].values
+data = pd.read_csv("D:/introduction to ML/jupyter notebooks/spam.csv",encoding = 'windows-1252')
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size= 0.2,random_state = 0)
+data
+data.shape
+x = data['v2'].values
+y = data['v1'].values
+x.shape
+y.shape
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.35,random_state = 48)
+x_train
+x_train.shape
 from sklearn.feature_extraction.text import CountVectorizer
 cv = CountVectorizer()
 x_train = cv.fit_transform(x_train)
@@ -46,19 +45,27 @@ svc = SVC()
 svc.fit(x_train,y_train)
 y_pred = svc.predict(x_test)
 y_pred
-from sklearn inport metrics
-accuracy = metrics.accuracy_score(y_test,y_pred)
-accuracy
+from sklearn.metrics import accuracy_score,confusion_matrix,classification_report
+acc = accuracy_score(y_test,y_pred)
+acc
+con = confusion_matrix(y_test,y_pred)
+print(con)
+cl = classification_report(y_test,y_pred)
+print(cl)
 ```
 
 ## Output:
+#### Data:
+![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/ac883980-2ee2-46fd-8cdb-82f067a463c1)
+#### Data.shape:
+![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/4b708069-05fb-481c-953a-1ccd957688e3)
+#### x_train:
+![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/083bd74b-bfa1-4d51-b55e-6c7fe12064f5)
+#### Accuracy:
+![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/ed95afb6-055d-478f-84b9-07d628180b3c)
+### Classification report:
+![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/b699b079-ded5-42e7-8ad6-2688df23694f)
 
-
-
-### Using Count vectorizer and SVM:
-![image](https://github.com/Meyyappan-T/Implementation-of-SVM-For-Spam-Mail-Detection/assets/128804366/2086fe50-a7f3-4d83-8762-b9674768b8bd)
-### Accuracy:
-![image](https://github.com/Meyyappan-T/Implementation-of-SVM-For-Spam-Mail-Detection/assets/128804366/f4505745-f782-48b3-90f0-7bcd6b1d5ff7)
 
 
 
