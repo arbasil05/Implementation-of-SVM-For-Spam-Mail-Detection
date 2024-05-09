@@ -63,7 +63,7 @@ print(cl)
 ![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/083bd74b-bfa1-4d51-b55e-6c7fe12064f5)
 #### Accuracy:
 ![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/ed95afb6-055d-478f-84b9-07d628180b3c)
-### Classification report:
+#### Classification report:
 ![image](https://github.com/arbasil05/Implementation-of-SVM-For-Spam-Mail-Detection/assets/144218037/b699b079-ded5-42e7-8ad6-2688df23694f)
 
 
